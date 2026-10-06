@@ -1,0 +1,27 @@
+{
+  "method": "GET",
+  "url": "https://data.cms.gov/provider-data/api/1/metastore/schemas/dataset/items/mj5m-pzi6?show-reference-ids",
+  "request_json": null,
+  "started_at_utc": "2026-10-02T20:47:03.182693+00:00",
+  "completed_at_utc": "2026-10-02T20:47:03.429239+00:00",
+  "elapsed_seconds": 0.247,
+  "status": 200,
+  "resolved_url": "https://data.cms.gov/provider-data/api/1/metastore/schemas/dataset/items/mj5m-pzi6?show-reference-ids",
+  "redirects_followed": 0,
+  "response_bytes": 2454,
+  "sha256": "94f366cb567ce86c7c6a2fef8e06ea3e43d19ebac2f2e96a6ad34028ab86a972",
+  "hash_origin": "local",
+  "body_file": "metadata-references.json",
+  "response_headers": {
+    "Content-Type": "application/json",
+    "Date": "Fri, 02 Oct 2026 20:47:03 GMT",
+    "ETag": "\"1790972560-gzip\"",
+    "Last-Modified": "Fri, 02 Oct 2026 20:22:40 GMT",
+    "Cache-Control": "max-age=0, no-cache, no-store"
+  },
+  "limits": {
+    "timeout_seconds": 30,
+    "response_bytes": 1048576,
+    "attempts": 1
+  }
+}

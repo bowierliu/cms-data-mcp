@@ -1,0 +1,26 @@
+{
+  "conditions": [
+    {
+      "property": "state",
+      "value": "CA",
+      "operator": "="
+    },
+    {
+      "property": "pri_spec",
+      "value": "CARDIOVASCULAR DISEASE (CARDIOLOGY)",
+      "operator": "="
+    }
+  ],
+  "properties": [
+    "state",
+    "pri_spec"
+  ],
+  "results": false,
+  "count": true,
+  "schema": true,
+  "limit": 1,
+  "offset": 0,
+  "keys": true,
+  "rowIds": false,
+  "format": "json"
+}

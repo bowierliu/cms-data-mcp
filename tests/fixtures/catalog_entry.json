@@ -1,0 +1,17 @@
+{
+  "synthetic": true,
+  "dataset_id": "synthetic-cardiology-counts",
+  "title": "Synthetic specialty and geography counts",
+  "publisher": "cms-data-mcp synthetic fixtures",
+  "source_url": "https://fixtures.invalid/synthetic-cardiology-counts",
+  "release_id": "fixture-v1",
+  "grain": ["specialty", "state", "city"],
+  "fields": [
+    {"name": "specialty", "type": "string"},
+    {"name": "state", "type": "string"},
+    {"name": "city", "type": "string"},
+    {"name": "record_count", "type": "integer"}
+  ],
+  "row_count": 5,
+  "contains_real_records": false
+}

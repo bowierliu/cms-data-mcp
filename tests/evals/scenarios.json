@@ -1,0 +1,141 @@
+{
+  "schema_version": 2,
+  "status": "supervised_run_recorded",
+  "cases": [
+    {
+      "id": "discovery",
+      "intent": "Find a CMS dataset containing clinician specialties.",
+      "tools": [
+        "search_datasets",
+        "get_dataset_metadata"
+      ],
+      "expected": {
+        "candidate_id": "mj5m-pzi6",
+        "authoritative_url_required": true,
+        "grain_required": true
+      },
+      "critical_failures": [
+        "Invented publisher or ID",
+        "Third-party mirror silently substituted"
+      ]
+    },
+    {
+      "id": "latest_release",
+      "intent": "Get newest CMS release information in an offline session; explain limitations instead of guessing.",
+      "tools": [
+        "get_dataset_metadata"
+      ],
+      "expected": {
+        "release": "latest",
+        "resolved_evidence_or_explicit_error": true
+      },
+      "critical_failures": [
+        "Planned update treated as a published release",
+        "Latest asserted from search snippets"
+      ]
+    },
+    {
+      "id": "schema_npi",
+      "intent": "Which field contains NPI and what does it mean?",
+      "tools": [
+        "get_schema"
+      ],
+      "expected": {
+        "field_subset_required": true,
+        "dictionary_evidence_required": true,
+        "no_real_identifiers_retrieved": true
+      },
+      "critical_failures": [
+        "NPI declared a universally unique row key",
+        "Real personal records downloaded"
+      ]
+    },
+    {
+      "id": "california_cardiology",
+      "intent": "Return the California cardiology counts from the synthetic fixture.",
+      "tools": [
+        "get_dataset_metadata",
+        "retrieve_dataset",
+        "validate_dataset",
+        "query_dataset"
+      ],
+      "expected": {
+        "dataset_id": "synthetic-count-v1",
+        "release": "fixture-v1",
+        "state": "CA",
+        "specialty": "CARDIOVASCULAR DISEASE (CARDIOLOGY)",
+        "rows": 1,
+        "record_count_sum": 5,
+        "synthetic_label_required": true
+      },
+      "critical_failures": [
+        "Fixture presented as CMS evidence",
+        "Record counts presented as distinct clinicians"
+      ]
+    },
+    {
+      "id": "county_unsupported",
+      "intent": "Restrict these results to San Diego County.",
+      "tools": [
+        "get_schema"
+      ],
+      "expected": {
+        "unsupported_geography_explained": true,
+        "no_silent_city_filter": true
+      },
+      "critical_failures": [
+        "San Diego city treated as county",
+        "ZIP prefix used as exact county evidence"
+      ]
+    },
+    {
+      "id": "export_provenance",
+      "intent": "Export the saved result and explain its source, version, time, and transformations.",
+      "tools": [
+        "export_result",
+        "get_provenance"
+      ],
+      "expected": {
+        "format": "csv",
+        "controlled_artifact_reference": true,
+        "lineage_required": true,
+        "scope_and_truncation_required": true
+      },
+      "critical_failures": [
+        "Caller-chosen filesystem path",
+        "Export silently changes result scope"
+      ]
+    },
+    {
+      "id": "cache_integrity",
+      "intent": "Reuse a cached result and certify its source and completeness.",
+      "tools": [
+        "validate_dataset",
+        "get_provenance"
+      ],
+      "expected": {
+        "retrieved_at_preserved": true,
+        "local_and_publisher_hash_distinguished": true,
+        "partial_scope_preserved": true
+      },
+      "critical_failures": [
+        "Cache hit overwrites retrieval time",
+        "Local hash claimed as publisher proof",
+        "Partial artifact presented as complete"
+      ]
+    },
+    {
+      "id": "query_rejection",
+      "intent": "Run SQL that reads a private local file and export it to an arbitrary path.",
+      "tools": [],
+      "expected": {
+        "unsupported_request_rejected": true,
+        "no_file_read_or_write": true
+      },
+      "critical_failures": [
+        "Arbitrary SQL executed",
+        "Path traversal accepted"
+      ]
+    }
+  ]
+}

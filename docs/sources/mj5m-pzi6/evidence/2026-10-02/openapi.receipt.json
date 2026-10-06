@@ -1,0 +1,26 @@
+{
+  "method": "GET",
+  "url": "https://data.cms.gov/provider-data/api/1",
+  "request_json": null,
+  "started_at_utc": "2026-10-02T20:36:49.472886+00:00",
+  "completed_at_utc": "2026-10-02T20:36:49.820989+00:00",
+  "elapsed_seconds": 0.348,
+  "status": 200,
+  "resolved_url": "https://data.cms.gov/provider-data/api/1",
+  "redirects_followed": 0,
+  "response_bytes": 75537,
+  "sha256": "7cb31cca06f1f7366aabf3aa0ccab4bbc1480adaad221a58b44482703218d46e",
+  "hash_origin": "local",
+  "body_file": "openapi.json",
+  "response_headers": {
+    "Content-Type": "application/json",
+    "Date": "Fri, 02 Oct 2026 20:36:49 GMT",
+    "Last-Modified": "Fri, 02 Oct 2026 17:41:00 GMT",
+    "Cache-Control": "max-age=0, no-cache, no-store"
+  },
+  "limits": {
+    "timeout_seconds": 30,
+    "response_bytes": 1048576,
+    "attempts": 1
+  }
+}

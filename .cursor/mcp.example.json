@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "cms-data-mcp": {
+      "type": "stdio",
+      "command": "${workspaceFolder}/.venv/bin/python",
+      "args": [
+        "-I", "-m", "cms_mcp.server",
+        "--cache-dir", "${workspaceFolder}/data/cache/mcp",
+        "--enable-live", "--log-calls"
+      ]
+    }
+  }
+}

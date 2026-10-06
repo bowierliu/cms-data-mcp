@@ -1,0 +1,7 @@
+---
+description: Core scope and engineering rules for cms-data-mcp.
+alwaysApply: true
+---
+
+Read and follow the canonical project rules in @.cursor/rules/project.md and
+the current checkpoint in @PROJECT_STATE.md before working in cms-data-mcp.

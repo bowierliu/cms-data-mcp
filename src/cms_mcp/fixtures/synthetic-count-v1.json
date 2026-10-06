@@ -1,0 +1,32 @@
+{
+  "fixture_id": "synthetic-count-v1",
+  "synthetic": true,
+  "metadata": {
+    "distribution_id": "11111111-2222-4333-8444-555555555555",
+    "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/synthetic/DAC_NationalDownloadableFile.csv",
+    "catalog_released": null,
+    "catalog_modified": null
+  },
+  "checked_at": "2026-01-01T00:00:00+00:00",
+  "retrieved_at": "2026-01-01T00:00:01+00:00",
+  "normalized_at": "2026-01-01T00:00:02+00:00",
+  "response": {
+    "count": 5,
+    "query": {
+      "conditions": [
+        {"property": "state", "value": "CA", "operator": "="},
+        {"property": "pri_spec", "value": "CARDIOVASCULAR DISEASE (CARDIOLOGY)", "operator": "="}
+      ],
+      "properties": ["state", "pri_spec"],
+      "results": false,
+      "count": true,
+      "schema": true,
+      "limit": 1,
+      "offset": 0,
+      "keys": true,
+      "rowIds": false,
+      "format": "json",
+      "resources": [{"id": "11111111-2222-4333-8444-555555555555", "alias": "t"}]
+    }
+  }
+}

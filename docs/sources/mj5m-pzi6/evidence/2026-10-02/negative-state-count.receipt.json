@@ -1,0 +1,50 @@
+{
+  "method": "POST",
+  "url": "https://data.cms.gov/provider-data/api/1/datastore/query/mj5m-pzi6/0",
+  "request_json": {
+    "conditions": [
+      {
+        "property": "state",
+        "value": "__CMS_MCP_NO_SUCH_STATE__",
+        "operator": "="
+      },
+      {
+        "property": "pri_spec",
+        "value": "CARDIOVASCULAR DISEASE (CARDIOLOGY)",
+        "operator": "="
+      }
+    ],
+    "properties": [
+      "state",
+      "pri_spec"
+    ],
+    "results": false,
+    "count": true,
+    "schema": false,
+    "limit": 1,
+    "offset": 0,
+    "keys": true,
+    "rowIds": false,
+    "format": "json"
+  },
+  "started_at_utc": "2026-10-02T20:46:51.792490+00:00",
+  "completed_at_utc": "2026-10-02T20:46:57.389596+00:00",
+  "elapsed_seconds": 5.597,
+  "status": 200,
+  "resolved_url": "https://data.cms.gov/provider-data/api/1/datastore/query/mj5m-pzi6/0",
+  "redirects_followed": 0,
+  "response_bytes": 407,
+  "sha256": "8ea9fdde995e9fe24d63239047e873588001846d37793c71baf49d6faa0e94eb",
+  "hash_origin": "local",
+  "body_file": "negative-state-count.json",
+  "response_headers": {
+    "Content-Type": "application/json",
+    "Date": "Fri, 02 Oct 2026 20:46:57 GMT",
+    "Cache-Control": "max-age=0, no-cache, no-store"
+  },
+  "limits": {
+    "timeout_seconds": 30,
+    "response_bytes": 1048576,
+    "attempts": 1
+  }
+}

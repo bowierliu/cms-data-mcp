@@ -1,0 +1,50 @@
+{
+  "method": "POST",
+  "url": "https://data.cms.gov/provider-data/api/1/datastore/query/mj5m-pzi6/0",
+  "request_json": {
+    "conditions": [
+      {
+        "property": "state",
+        "value": "CA",
+        "operator": "="
+      },
+      {
+        "property": "pri_spec",
+        "value": "__CMS_MCP_NO_SUCH_SPECIALTY__",
+        "operator": "="
+      }
+    ],
+    "properties": [
+      "state",
+      "pri_spec"
+    ],
+    "results": false,
+    "count": true,
+    "schema": false,
+    "limit": 1,
+    "offset": 0,
+    "keys": true,
+    "rowIds": false,
+    "format": "json"
+  },
+  "started_at_utc": "2026-10-02T20:46:57.391210+00:00",
+  "completed_at_utc": "2026-10-02T20:47:03.181174+00:00",
+  "elapsed_seconds": 5.79,
+  "status": 200,
+  "resolved_url": "https://data.cms.gov/provider-data/api/1/datastore/query/mj5m-pzi6/0",
+  "redirects_followed": 0,
+  "response_bytes": 378,
+  "sha256": "9cdaf297aa77b5ba74bc6e933d4747103cbfd88467f60f40e7c6072cfeeab875",
+  "hash_origin": "local",
+  "body_file": "negative-specialty-count.json",
+  "response_headers": {
+    "Content-Type": "application/json",
+    "Date": "Fri, 02 Oct 2026 20:47:03 GMT",
+    "Cache-Control": "max-age=0, no-cache, no-store"
+  },
+  "limits": {
+    "timeout_seconds": 30,
+    "response_bytes": 1048576,
+    "attempts": 1
+  }
+}

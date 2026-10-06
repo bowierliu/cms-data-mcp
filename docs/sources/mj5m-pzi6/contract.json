@@ -1,0 +1,190 @@
+{
+  "contract_version": "1.0.0",
+  "status": "count_only_feasibility_verified_no_runtime_adapter",
+  "reviewed_on": "2026-10-02",
+  "source_id": "cms-pdc:mj5m-pzi6",
+  "dataset": {
+    "publisher": "Centers for Medicare & Medicaid Services (CMS)",
+    "dataset_id": "mj5m-pzi6",
+    "title": "National Downloadable File",
+    "landing_url": "https://data.cms.gov/provider-data/dataset/mj5m-pzi6",
+    "access_level": "public",
+    "dictionary_url": "https://data.cms.gov/provider-data/sites/default/files/data_dictionaries/physician/DOC_Data_Dictionary.pdf",
+    "raw_grain": [
+      "clinician",
+      "enrollment_record",
+      "group",
+      "address"
+    ],
+    "claims_lookback_months_documented": 12,
+    "coverage_start": null,
+    "coverage_end": null,
+    "frequency": null
+  },
+  "endpoints": {
+    "metadata": "https://data.cms.gov/provider-data/api/1/metastore/schemas/dataset/items/mj5m-pzi6",
+    "metadata_references": "https://data.cms.gov/provider-data/api/1/metastore/schemas/dataset/items/mj5m-pzi6?show-reference-ids",
+    "openapi": "https://data.cms.gov/provider-data/api/1",
+    "count_query": {
+      "method": "POST",
+      "url": "https://data.cms.gov/provider-data/api/1/datastore/query/mj5m-pzi6/0",
+      "request_file": "count-request.json",
+      "content_type": "application/json",
+      "authentication_observed": "none"
+    }
+  },
+  "distribution": {
+    "index": 0,
+    "observed_id": "288f7073-7fc6-5f3b-aa25-44902d5d1f8f",
+    "download_url_metadata_only": "https://data.cms.gov/provider-data/sites/default/files/resources/52c3f098d7e56028a298fd297cb0b38d_1787091341/DAC_NationalDownloadableFile.csv",
+    "raw_download_permitted": false,
+    "observed_storage_version": "1787091341",
+    "publisher_checksum": null,
+    "storage_version_is_immutable_release_guarantee": false
+  },
+  "version": {
+    "issued": "2023-08-17",
+    "catalog_modified": "2026-08-18",
+    "catalog_released": "2026-09-10",
+    "catalog_next_update": "2026-10-15",
+    "catalog_record_modified": "2026-09-10T01:00:56-0400",
+    "publisher_immutable_release_id": null,
+    "query_semantics": "timestamped_mutable_datastore_observation",
+    "query_release_binding_verified": false,
+    "metadata_before_after_bytes_identical": true,
+    "source_ref_inputs": [
+      "source_id",
+      "distribution_id",
+      "download_url",
+      "catalog_released",
+      "catalog_modified",
+      "metadata_hash",
+      "checked_at"
+    ],
+    "snapshot_id_created": "after_retrieval_from_response_hash_scope_and_time"
+  },
+  "schema": {
+    "observed_field_count": 31,
+    "evidence_file": "evidence/2026-10-02/cardiology-count.json",
+    "filter_fields": {
+      "state": {
+        "canonical_name": "state",
+        "upstream_type": "text",
+        "meaning": "group or individual practice state"
+      },
+      "pri_spec": {
+        "canonical_name": "primary_specialty",
+        "upstream_type": "text",
+        "meaning": "primary specialty reported in the selected enrollment"
+      }
+    },
+    "geography_metadata_only": {
+      "city": "citytown",
+      "zip": "zip_code",
+      "county": null
+    },
+    "personal_fields_are_metadata_only": true
+  },
+  "permitted_live_view": {
+    "name": "california_primary_cardiology_record_count",
+    "conditions": [
+      {
+        "property": "state",
+        "value": "CA",
+        "operator": "="
+      },
+      {
+        "property": "pri_spec",
+        "value": "CARDIOVASCULAR DISEASE (CARDIOLOGY)",
+        "operator": "="
+      }
+    ],
+    "returned_rows": false,
+    "aggregate": "count_of_matching_records",
+    "normalized_columns": [
+      "state",
+      "primary_specialty",
+      "record_count"
+    ],
+    "normalization": "state and primary_specialty from validated fixed request; record_count from response.count",
+    "normalized_grain": [
+      "state",
+      "primary_specialty"
+    ],
+    "counts_distinct_people": false,
+    "includes_secondary_specialty_matches": false,
+    "arbitrary_filters_permitted": false,
+    "grouped_city_zip_county_queries_permitted": false,
+    "raw_identifiers_permitted": false,
+    "small_cell_policy": "Only this broad fixed view was investigated; this is not a privacy guarantee for arbitrary counts or narrower filters."
+  },
+  "response_contract": {
+    "required": [
+      "count",
+      "query"
+    ],
+    "count_type": "nonnegative_integer_excluding_boolean",
+    "query_echo_must_match_request": true,
+    "query_resource_must_match_distribution": true,
+    "schema_optional": true,
+    "result_rows_must_be_absent_or_empty": true,
+    "unexpected_rows_action": "reject_without_persisting_or_logging_body",
+    "server_count_ignores_limit_and_offset": "documented_in_openapi",
+    "full_underlying_dataset_quality_validated": false,
+    "allowed_server_added_query_keys": [
+      "resources"
+    ]
+  },
+  "observations": {
+    "positive": {
+      "observed_at_utc": "2026-10-02T20:46:14.207452+00:00",
+      "count": 5634,
+      "response_file": "evidence/2026-10-02/cardiology-count.json",
+      "receipt_file": "evidence/2026-10-02/cardiology-count.receipt.json"
+    },
+    "negative_state": {
+      "count": 0,
+      "response_file": "evidence/2026-10-02/negative-state-count.json"
+    },
+    "negative_specialty": {
+      "count": 0,
+      "response_file": "evidence/2026-10-02/negative-specialty-count.json"
+    }
+  },
+  "network_constraints": {
+    "https_host": "data.cms.gov",
+    "redirects": "reject",
+    "internal_reference_urls": "record_as_metadata_only_never_dereference",
+    "response_byte_cap": 1048576,
+    "probe_socket_timeout_seconds": 30,
+    "probe_automatic_retries": 0,
+    "upstream_scan_work_bound_verified": false,
+    "maximum_page_size_verified": null,
+    "rate_limit_verified": null,
+    "pagination_used": false,
+    "live_query_returns_one_scalar_count": true
+  },
+  "documented_errors": [
+    {
+      "status": 400,
+      "meaning": "query/schema failure; do not broaden fields"
+    },
+    {
+      "status": 404,
+      "meaning": "source identifier unavailable; refresh metadata without falling back to raw rows"
+    },
+    {
+      "status": 503,
+      "meaning": "temporary load limit; honor Retry-After with bounded retry policy, never remove privacy restrictions"
+    }
+  ],
+  "limitations": [
+    "Not a list or distinct count of cardiologists",
+    "Primary-specialty exact match only; excludes secondary specialties and other cardiology labels",
+    "County mapping absent",
+    "No row-level validation or downloaded-file checksum",
+    "No immutable historical release guarantee",
+    "No evidence that arbitrary grouped aggregates are safe",
+    "No runtime adapter or MCP server implemented"
+  ]
+}

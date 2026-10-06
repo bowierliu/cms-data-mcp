@@ -1,0 +1,212 @@
+cms-data-mcp/
+├── .cursor/
+│   ├── agents/
+│   │   ├── architect.md
+│   │   ├── data-engineer.md
+│   │   ├── explore.md
+│   │   ├── mcp-engineer.md
+│   │   ├── reviewer.md
+│   │   ├── teacher.md
+│   │   └── verifier.md
+│   ├── commands/
+│   │   ├── checkpoint.md
+│   │   ├── plan.md
+│   │   ├── review.md
+│   │   ├── teacher.md
+│   │   └── verify.md
+│   ├── rules/
+│   │   ├── project.md
+│   │   └── project.mdc
+│   ├── skills/
+│   │   ├── checkpoint/
+│   │   │   └── SKILL.md
+│   │   ├── cms-data-discovery/
+│   │   │   └── SKILL.md
+│   │   ├── cms-source-validation/
+│   │   │   └── SKILL.md
+│   │   ├── data-validation/
+│   │   │   └── SKILL.md
+│   │   ├── healthcare-data-modeling/
+│   │   │   └── SKILL.md
+│   │   ├── mcp-testing/
+│   │   │   └── SKILL.md
+│   │   ├── mcp-tool-design/
+│   │   │   └── SKILL.md
+│   │   ├── plan/
+│   │   │   └── SKILL.md
+│   │   ├── provenance/
+│   │   │   └── SKILL.md
+│   │   ├── review/
+│   │   │   └── SKILL.md
+│   │   ├── teacher/
+│   │   │   └── SKILL.md
+│   │   └── verify/
+│   │       └── SKILL.md
+│   ├── mcp.example.json
+│   └── mcp.json
+├── .github/
+│   └── workflows/
+│       └── verify.yml
+├── data/
+│   ├── cache/
+│   │   ├── live-demo/
+│   │   │   ├── exports/
+│   │   │   │   └── export-c5214c0df1aa1c8e5d326e674c5dca8322d8f7394dc8b8cc486223b6a70067ca.csv
+│   │   │   ├── records/
+│   │   │   │   ├── export-f38ee152e465221c7ace6c63a0065c719a88fc8477cd4005e8f2bf1ce8ab17c4.json
+│   │   │   │   ├── result-fdc54978f1d86b2f44bc46c8bb2667b4a13198d625f2d0f14ee7a011695b7017.json
+│   │   │   │   ├── source-5b850fdced19fe0d8442bfb9f036fdd4fdb9ee1df832d528b3d4d5c9bdb5224c.json
+│   │   │   │   └── validation-c1213b974ac7b94c204c1daa0a04ea589e443490d2be8a793b1a877e26f1e055.json
+│   │   │   └── 0250118a51e0f75dde28f28af55aecf52cf2845d52d2a0ba993dd088a57576f4.json
+│   │   ├── mcp/
+│   │   │   └── ff00426ee19608cce45f73ac1ee202dcef0d2ab7f54b8f3e2468e8e3afe4bf61.json
+│   │   ├── offline-demo/
+│   │   │   └── ff00426ee19608cce45f73ac1ee202dcef0d2ab7f54b8f3e2468e8e3afe4bf61.json
+│   │   └── README.md
+│   └── fixtures/
+│       ├── README.md
+│       └── cardiology_counts.csv
+├── docs/
+│   ├── adr/
+│   │   ├── 001-local-first-vertical-slice.md
+│   │   └── 002-fixed-aggregate-mvp.md
+│   ├── sources/
+│   │   └── mj5m-pzi6/
+│   │       ├── evidence/
+│   │       │   └── 2026-10-02/
+│   │       │       ├── README.md
+│   │       │       ├── cardiology-count.json
+│   │       │       ├── cardiology-count.receipt.json
+│   │       │       ├── metadata-after.json
+│   │       │       ├── metadata-after.receipt.json
+│   │       │       ├── metadata-before.json
+│   │       │       ├── metadata-before.receipt.json
+│   │       │       ├── metadata-references.json
+│   │       │       ├── metadata-references.receipt.json
+│   │       │       ├── negative-specialty-count.json
+│   │       │       ├── negative-specialty-count.receipt.json
+│   │       │       ├── negative-state-count.json
+│   │       │       ├── negative-state-count.receipt.json
+│   │       │       ├── openapi.json
+│   │       │       └── openapi.receipt.json
+│   │       ├── README.md
+│   │       ├── contract.json
+│   │       ├── count-request.json
+│   │       └── verification.md
+│   ├── agent-evaluation.md
+│   ├── agent-system.md
+│   ├── analytics.md
+│   ├── architecture.md
+│   ├── completion-plan.md
+│   ├── datasets.md
+│   ├── demo.md
+│   ├── live-source.md
+│   ├── mcp-adapter.md
+│   ├── mcp-tools.md
+│   ├── mcp-verification.md
+│   ├── model-contracts.md
+│   ├── model-verification.md
+│   ├── offline-workflow.md
+│   ├── provenance.md
+│   ├── release-verification.md
+│   ├── resume.md
+│   ├── roadmap.md
+│   ├── scaffold-verification.md
+│   ├── storage-contract.md
+│   ├── storage-plan.md
+│   ├── storage-verification.md
+│   ├── tree.txt
+│   └── workflow-verification.md
+├── examples/
+│   ├── cardiologist_search.md
+│   ├── dataset_discovery.md
+│   ├── mcp_stdio.md
+│   └── offline_count.md
+├── scripts/
+│   ├── check_mcp.py
+│   ├── eval_call.py
+│   ├── prepare_eval.py
+│   ├── show_tree.py
+│   └── verify_scaffold.py
+├── skills/
+│   ├── cms-data-discovery/
+│   │   └── SKILL.md
+│   ├── cms-source-validation/
+│   │   └── SKILL.md
+│   ├── data-validation/
+│   │   └── SKILL.md
+│   ├── healthcare-data-modeling/
+│   │   └── SKILL.md
+│   ├── mcp-testing/
+│   │   └── SKILL.md
+│   ├── mcp-tool-design/
+│   │   └── SKILL.md
+│   └── provenance/
+│       └── SKILL.md
+├── src/
+│   └── cms_mcp/
+│       ├── fixtures/
+│       │   └── synthetic-count-v1.json
+│       ├── __init__.py
+│       ├── analytics.py
+│       ├── api.py
+│       ├── catalog.py
+│       ├── demo.py
+│       ├── models.py
+│       ├── py.typed
+│       ├── records.py
+│       ├── server.py
+│       ├── service.py
+│       ├── sources.py
+│       ├── storage.py
+│       ├── synthetic.py
+│       └── workflow.py
+├── tests/
+│   ├── evals/
+│   │   ├── runs/
+│   │   │   └── 2026-10-04-first-release/
+│   │   │       ├── cache/
+│   │   │       │   ├── exports/
+│   │   │       │   │   └── export-ad261fd5275b90fc962cd449c3d310d2ddfc312142fa7f76ceebdec301b901d6.csv
+│   │   │       │   ├── records/
+│   │   │       │   │   ├── export-4dc8770dcb8acb180ecc1c74f92418e65b7628126635c837d532a3e43cba7b6f.json
+│   │   │       │   │   ├── result-0257b2f8fe141ebc3d496f4c3f38b007a605964caa19c7902df058d87c744f2d.json
+│   │   │       │   │   ├── result-a8d7092b73fb7c64500355aeb6e1073dbe57498aefef80cec9a70d20a39e319a.json
+│   │   │       │   │   ├── source-5f6d1ca5a92a47898810697093a07361cb37bee6ffc7e39db5c75db0553ca6df.json
+│   │   │       │   │   ├── validation-42d2de04ba2d84fa957c3330b9bd165bed918030fcef77df3ba2d9ed0e42d756.json
+│   │   │       │   │   ├── validation-a690ec006cbecdc5be0c0903d27c6719d69c21ba83e88855aff1172484fbf8d0.json
+│   │   │       │   │   └── validation-bf949f08ca3d7d6e7d1dd59f2ff327511ea6df0efe86eefd522f93c392fa318c.json
+│   │   │       │   └── ff00426ee19608cce45f73ac1ee202dcef0d2ab7f54b8f3e2468e8e3afe4bf61.json
+│   │   │       ├── answers.json
+│   │   │       ├── cases.json
+│   │   │       ├── context.json
+│   │   │       ├── tools.json
+│   │   │       └── trace.jsonl
+│   │   ├── README.md
+│   │   └── scenarios.json
+│   ├── fixtures/
+│   │   ├── README.md
+│   │   └── catalog_entry.json
+│   ├── integration/
+│   │   ├── README.md
+│   │   ├── test_complete_workflow.py
+│   │   ├── test_mcp_pipeline.py
+│   │   ├── test_mcp_server.py
+│   │   ├── test_records.py
+│   │   ├── test_storage.py
+│   │   └── test_workflow.py
+│   ├── unit/
+│   │   ├── README.md
+│   │   ├── test_analytics.py
+│   │   ├── test_models.py
+│   │   └── test_sources.py
+│   ├── README.md
+│   └── conftest.py
+├── .env.example
+├── .gitignore
+├── .python-version
+├── AGENTS.md
+├── PROJECT_STATE.md
+├── README.md
+├── pyproject.toml
+└── uv.lock
