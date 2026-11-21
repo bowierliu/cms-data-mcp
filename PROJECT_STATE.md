@@ -1,6 +1,6 @@
 # cms-data-mcp project state
 
-Updated: 2026-10-05.
+Updated: 2026-11-21.
 
 ## Current phase
 
@@ -10,6 +10,14 @@ export → provenance. The broader future roadmap remains explicitly deferred.
 User-run Cursor acceptance confirmed all nine tools and the synthetic happy path,
 but exposed an error-output schema defect. The schema fix passes local regression
 checks; full Cursor acceptance remains pending a real chat error retest.
+
+## Recruiter access
+
+The static replay presents a captured synthetic stdio run in a browser. The
+local web companion uses an operator-controlled ledger, OpenAI and real MCP
+tools over the SDK’s in-process transport. The only questions concern validation
+or lineage of the packaged fictional aggregate. The original stdio server and
+opt-in public CMS count remain available. [Use the demo](README.md#try-the-demo).
 
 ## Completed
 
@@ -81,10 +89,8 @@ provenance rechecks all parents. Local hashes do not imply publisher verificatio
 - Post-fix Cursor error acceptance is still pending: the computer-control service
   again failed to start on 2026-10-05. Automated schema/stdio evidence does not
   substitute for that retest. See [Cursor acceptance](docs/cursor-acceptance.md).
-- The owner approved a private GitHub preview. Agent-evaluator setup, acceptance
-  prompts, safety boundaries and the supervised eval workflow are documented for
-  reviewers. Public visibility and license selection remain pending explicit owner
-  approval. The provided CI workflow still needs its first GitHub run.
+- The GitHub repository is public. Offline CI has run successfully. The hosted
+  demo is static. The local companion uses mocked provider responses in tests.
 - Current query scope is one fixed aggregate row; no city/county/ZIP filtering,
   distinct-person counting, arbitrary SQL/URLs/paths, grouped data or comparisons.
 - Raw data quality, publisher integrity, immutable release binding and exact
@@ -100,8 +106,6 @@ provenance rechecks all parents. Local hashes do not imply publisher verificatio
 Restart/reconnect the Cursor MCP server to load the changed tool schemas, then
 repeat the six error cases in the [acceptance checklist](docs/cursor-acceptance.md).
 Keep full Cursor acceptance pending until readable domain errors are observed.
-Keep the GitHub repository private until the owner explicitly approves public
-visibility. Select a license only as part of that public-release review.
 
 Future expansions need their own evidence and acceptance criteria: county
 crosswalks, additional datasets, general analytics/DuckDB, Parquet, historical

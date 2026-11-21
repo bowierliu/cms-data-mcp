@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Inspect a fictional California cardiology count, its validation checks, and the source lineage an MCP tool returns.">
+  <title>CMS Data MCP · California cardiology</title>
+  <link rel="stylesheet" href="demo.css">
+  <script src="demo.js" defer></script>
+</head>
+<body>
+  <header><div class="shell mast">
+    <a class="brand" href="#main"><span aria-hidden="true" class="mark"></span>CMS Data MCP</a>
+    <nav aria-label="Main navigation"><a href="#live">Live companion</a><a href="https://github.com/bowierliu/cms-data-mcp">GitHub ↗</a></nav>
+  </div></header>
+  <main class="shell" id="main">
+    <section class="intro" aria-labelledby="title">
+      <div><p class="mode"><span class="dot"></span> Offline replay</p>
+        <h1 id="title">What does a cardiology count measure?</h1>
+        <p class="lead">Follow a fictional California cardiology count through validation and CSV export, then trace the result back to its source.</p>
+      </div>
+      <aside class="measure" aria-label="Synthetic result"><span class="value">5</span>
+        <span>fictional enrollment/location records</span><small>California · Primary cardiology</small>
+      </aside>
+    </section>
+
+    <section class="evidence" aria-labelledby="evidence-title">
+      <div class="section-heading"><h2 id="evidence-title">Inspect the evidence</h2><a href="replay.json" download="cms-synthetic-replay.json">Download run JSON ↓</a></div>
+      <p>The recorded run used a real MCP client and a packaged fixture. Open a step to inspect the result. No account, model or network request is needed to explore it.</p>
+      <details open><summary>What was counted?</summary><div class="answer">
+        <p>The fixture contains five enrollment/location records with California as the state and cardiology as the primary specialty. A clinician can have multiple enrollments or practice locations. This aggregate cannot establish the number of unique clinicians.</p>
+        <code>get_dataset_metadata → get_schema → retrieve_dataset</code>
+      </div></details>
+      <details><summary>What did validation check?</summary><div class="answer">
+        <p>Six contract checks passed, including artifact integrity, the normalized schema, a nonnegative count and the fixed scope. Six other assessments remained unchecked, including duplicate records, publisher integrity and raw-row quality.</p>
+        <code>validate_dataset</code>
+      </div></details>
+      <details><summary>What can I export and trace?</summary><div class="answer">
+        <p>The saved query produced one row. The export traced back through its query and validation report to the original fixture, with three linked derived records. The fixture records its acquisition at 2026-01-01 00:00:01 UTC.</p>
+        <pre aria-label="CSV output">state,record_count
+CA,5</pre><code>query_dataset → export_result → get_provenance</code>
+      </div></details>
+    </section>
+
+    <section class="live" id="live" aria-labelledby="live-title">
+      <p class="mode"><span class="dot outline"></span> Live model · Local companion</p>
+      <h2 id="live-title">Ask the model to investigate</h2>
+      <p>Choose a question about the same fictional count. The model selects an MCP tool, reads its evidence and drafts an explanation for human review.</p>
+      <div id="setup">
+        <a class="button" href="https://github.com/bowierliu/cms-data-mcp#run-the-live-companion">Set up the local companion ↗</a>
+        <p class="fine">Runs on your computer using your configured OpenAI key. The public replay never requests a key.</p>
+      </div>
+      <div id="controls" hidden>
+        <label for="question">Investigation question</label>
+        <select id="question"><option value="validation">Which properties of this count were checked?</option><option value="lineage">How does the count trace back to its source?</option></select>
+        <p class="fine">Running sends the fixed question and synthetic evidence to OpenAI. Up to two model calls can incur charges against your configured limits.</p>
+        <div class="actions"><button id="run" type="button">Run model investigation</button><button type="button" class="secondary" id="stop">Stop local server</button></div>
+        <p id="status" aria-live="polite"></p>
+        <div id="result" hidden><h3>Model explanation</h3><p id="explanation"></p>
+          <h3>MCP evidence</h3><p id="tool-path"></p><pre id="detail"></pre></div>
+      </div>
+    </section>
+  </main>
+  <footer><div class="shell"><span>CMS Data MCP</span><a href="https://github.com/bowierliu/cms-data-mcp/blob/main/docs/mcp-tools.md">Tool reference ↗</a></div></footer>
+</body>
+</html>

@@ -10,6 +10,53 @@ fixed to California records with primary specialty `CARDIOVASCULAR DISEASE
 (CARDIOLOGY)`. It counts enrollment/location records, **not distinct clinicians**.
 No individual clinician rows, names, NPIs, or addresses are retrieved.
 
+## Try the demo
+
+[**Open the offline replay**](https://bowierliu.github.io/cms-data-mcp/) ·
+[Recorded MCP output](docs/replay.json) · [Source and scope](docs/mcp-tools.md)
+
+Explore the five-record fictional California cardiology aggregate, its validation
+checks, CSV output and source lineage. GitHub Pages serves static files. You can
+also open `docs/index.html` directly from a checkout, including without internet
+access. This replay was captured by a real SDK/stdio workflow. It does not run a
+model or ask for a key.
+
+## Run the live companion
+
+The companion lets a model choose the next MCP tool and explain its evidence.
+Choose a fixed question about validation or source lineage. The app asks OpenAI
+to select a tool, materializes the packaged synthetic count, then calls the
+selected tool through the official MCP SDK. A second model call reads the actual
+tool results. The browser shows the generated explanation separately from the
+tool trace so a reviewer can inspect both.
+
+1. Clone this repository (or download and extract its ZIP). Install
+   [uv](https://docs.astral.sh/uv/) if needed.
+2. Follow the [one-time key and budget setup](docs/LIVE_BUDGET.md). The three
+   portfolio companions share a local spending ledger. On macOS use Keychain
+   Access to save your key once. Live mode requires the operator to enable it.
+3. On macOS double-click **Launch CMS Demo.command**. First launch installs the
+   locked Python environment. It opens the local web page and detaches the
+   server, so you can close the terminal window. On other supported POSIX
+   systems run `uv run --locked python -m cms_mcp.recruiter --launch`.
+4. Choose a question under **Ask the model to investigate** and select
+   **Run model investigation**. Select **Stop local server** when finished.
+   The companion serves only the local computer at `http://127.0.0.1:8767`.
+
+The companion sends a fixed question and selected synthetic aggregate evidence
+to OpenAI using the operator's key. There is no browser key field, sign-in,
+analytics or free-text patient input. A reviewer can use their own local
+credential store and ledger. Each completed investigation makes two text
+generations and two MCP tool calls. Budget denials and failures stop the run.
+The shared guard also obtains a token count before each generation. Model
+explanations require human review.
+
+The **live model** label concerns inference. The companion always uses the
+fictional fixture and never retrieves clinician-level data. The separate
+`--live` CLI below queries the approved public CMS aggregate without a model.
+External MCP clients manage their own model provider, pricing and spending.
+The portfolio ledger covers calls made through this companion.
+
 ## Quick start
 
 Open the `cms-data-mcp` directory as the project. Requires Python 3.11+ and
@@ -74,8 +121,7 @@ evaluation harness.
 
 ## Connect your AI client
 
-A project-local `.cursor/mcp.json` is configured in this workspace. For a fresh
-checkout, copy [.cursor/mcp.example.json](.cursor/mcp.example.json) to
+For a fresh checkout, copy [.cursor/mcp.example.json](.cursor/mcp.example.json) to
 `.cursor/mcp.json` after creating the Python environment. The example enables only
 the approved live metadata/count endpoints; remove `--enable-live` for offline use.
 It uses project-relative variable interpolation and works independently of the
@@ -177,6 +223,9 @@ see [agent routing](docs/agent-system.md). [Interview and resume notes](docs/res
 cover only implemented behavior. [PROJECT_STATE.md](PROJECT_STATE.md) is the
 current checkpoint.
 
-The repository is in private review before public release. No open-source license
-has been selected; visibility and licensing will be revisited only after owner
-approval.
+To publish the reviewed replay, push the intended main commit, run
+`sh scripts/publish-pages.sh`, and select **gh-pages / (root)** in GitHub Pages
+settings. The script publishes four reviewed assets and a Jekyll bypass marker.
+
+The source repository is public. Public hosting serves the offline replay only.
+The live companion runs locally. No open-source license has been selected.

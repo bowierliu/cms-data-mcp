@@ -16,6 +16,7 @@ one live CMS count adapter. It has no personal-record ingestion or remote server
 | `workflow.py` | Source selection, artifact operations, parent verification and lineage |
 | `api.py` | Tool arguments, output schemas, descriptions and application dispatch |
 | `server.py` | Official MCP SDK stdio transport, safe errors and optional call logging |
+| `recruiter.py`, `portfolio_guard.py` | Local-only browser companion, model tool selection, shared durable spending ledger |
 | `service.py`, `demo.py` | Original application-only synthetic workflow |
 
 ```mermaid

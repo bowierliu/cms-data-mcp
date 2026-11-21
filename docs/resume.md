@@ -30,7 +30,7 @@ Useful interview topics:
 6. How corruption, source drift, unavailable data, unsupported geography and
    invalid arguments fail without silently substituting another result.
 
-Do not claim generalized CMS search, row-level ingestion, historical comparison,
-DuckDB/Snowflake implementation, clinical validation, production scale, a public
-GitHub release, or cross-model reliability. [Verification](release-verification.md)
+The public repository and static replay are separate from production deployment.
+Generalized CMS search, row-level ingestion, historical comparison, DuckDB/Snowflake,
+clinical validation, production scale and cross-model reliability are outside this evidence. [Verification](release-verification.md)
 and [agent evaluation](agent-evaluation.md) provide the evidence behind these bullets.

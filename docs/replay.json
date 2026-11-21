@@ -1,0 +1,36 @@
+{
+  "server": "cms-data-mcp",
+  "sdk_version": "2.3.0",
+  "protocol_version": "2026-07-28",
+  "tools": [
+    "export_result",
+    "get_dataset_metadata",
+    "get_provenance",
+    "get_schema",
+    "materialize_synthetic_count",
+    "query_dataset",
+    "retrieve_dataset",
+    "search_datasets",
+    "validate_dataset"
+  ],
+  "synthetic": true,
+  "record_count": 5,
+  "counts_distinct_people": false,
+  "cache_status": "hit",
+  "retrieved_at": "2026-01-01T00:00:01Z",
+  "artifact_id": "artifact:ff00426ee19608cce45f73ac1ee202dcef0d2ab7f54b8f3e2468e8e3afe4bf61",
+  "source_ref": "source:5f6d1ca5a92a47898810697093a07361cb37bee6ffc7e39db5c75db0553ca6df",
+  "catalog_released": null,
+  "publisher_immutable_release_id": null,
+  "validation_status": "pass",
+  "query_rows": [
+    [
+      "CA",
+      5
+    ]
+  ],
+  "csv": "state,record_count\r\nCA,5\r\n",
+  "export_id": "export:c68eeedd58e8130fde038736a78cd6abf06885ae20eeefd45edc1064e9085804",
+  "lineage_steps": 3,
+  "storage": "temporary_removed_on_exit"
+}
